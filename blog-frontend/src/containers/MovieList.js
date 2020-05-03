@@ -1,0 +1,35 @@
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import MovieCard from '../component/MovieCard';
+import { fetchMovies, deleteMovie } from '../store/actions/movies';
+
+class MovieList extends Component {
+  componentDidMount() {
+    this.props.fetchMovies();
+  }
+  render() {
+    let movieCards = this.props.movies.map((m) => {
+      return (
+        <MovieCard
+          {...m}
+          deleteMovie={this.props.deleteMovie.bind(this, m.user._id, m._id)}
+        />
+      );
+    });
+    return (
+      <div className="container mt-5">
+        <div className="row ">{movieCards}</div>
+      </div>
+    );
+  }
+}
+
+const mapStateToProps = (state) => {
+  return {
+    movies: state.movies,
+  };
+};
+
+export default connect(mapStateToProps, { fetchMovies, deleteMovie })(
+  MovieList
+);
