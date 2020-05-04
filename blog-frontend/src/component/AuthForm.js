@@ -45,9 +45,9 @@ class AuthForm extends Component {
       });
     });
     return (
-      <div className="container ">
+      <div className="container pt-4 ">
         <div className="row justify-content-md-center ">
-          <div className="col-md-6 mt-3">
+          <div className="col-9  col-md-10 col-lg-7 col-xl-6">
             <h2>{heading}</h2>
             {error.message && (
               <div className="alert alert-danger">{error.message}</div>

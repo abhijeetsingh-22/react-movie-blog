@@ -30,7 +30,7 @@ class MovieForm extends Component {
     return (
       <div className="container pt-4">
         <div className="row justify-content-center">
-          <div className="col-md-6">
+          <div className="col-9  col-md-10 col-lg-7 col-xl-6">
             <h2 className="text-center">Add new Movie!!!</h2>
             {error.message && (
               <div className="alert alert-danger">{error.message}</div>
