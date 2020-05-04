@@ -23,6 +23,17 @@ app.get('/api/movies', async function (req, res, next) {
     return next(err);
   }
 });
+app.get('/api/movies/:movie_id', async function (req, res, next) {
+  try {
+    const movie = await db.Movie.findById(req.params.movie_id).populate(
+      'user',
+      { username: true }
+    );
+    return res.status(200).json(movie);
+  } catch (err) {
+    return next(err);
+  }
+});
 app.use(function (req, res, next) {
   let err = new Error('Not Found');
   err.status = 404;

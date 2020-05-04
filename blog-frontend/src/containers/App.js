@@ -5,6 +5,7 @@ import Navbar from './Navbar';
 import { configureStore } from '../store';
 import Main from './Main';
 import { setToken, setCurrentUser } from '../store/actions/auth';
+import Footer from '../component/Footer';
 import jwtDecode from 'jwt-decode';
 const store = configureStore();
 
@@ -20,10 +21,9 @@ const App = () => {
   return (
     <Provider store={store}>
       <Router>
-        <div>
-          <Navbar />
-          <Main />
-        </div>
+        <Navbar />
+        <Main />
+        <Footer />
       </Router>
     </Provider>
   );

@@ -13,6 +13,7 @@ class MovieList extends Component {
         <MovieCard
           {...m}
           deleteMovie={this.props.deleteMovie.bind(this, m.user._id, m._id)}
+          isCorrectUser={this.props.currentUser.user.id === m.user._id}
         />
       );
     });
@@ -27,6 +28,7 @@ class MovieList extends Component {
 const mapStateToProps = (state) => {
   return {
     movies: state.movies,
+    currentUser: state.currentUser,
   };
 };
 

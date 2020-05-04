@@ -13,8 +13,8 @@ class Navbar extends Component {
     return (
       <>
         {' '}
-        <nav className="navbar navbar-expand d-flex justify-content-between navbar-dark bg-dark">
-          <div className="container-fluid">
+        <nav className="navbar navbar-expand d-flex justify-content-between navbar-dark bg-light">
+          <div className="container">
             <Link to="/">
               <img
                 src={logo}
@@ -24,14 +24,19 @@ class Navbar extends Component {
               />
             </Link>
             {currentUser.isAuthenticated ? (
-              <ul className="nav navbar-nav nav-right">
-                <li>
-                  <Link to={`/users/${currentUser.user.id}/movies/new`}>
+              <ul className="nav navbar-nav ml-auto">
+                <li className="nav-item">
+                  <Link
+                    to={`/users/${currentUser.user.id}/movies/new`}
+                    className="nav-link ml-4"
+                  >
                     Add New Movie
                   </Link>
                 </li>
-                <li>
-                  <a onClick={this.logout}>Logout</a>
+                <li className="nav-item">
+                  <a onClick={this.logout} className="nav-link ml-4" href="">
+                    Logout
+                  </a>
                 </li>
               </ul>
             ) : (

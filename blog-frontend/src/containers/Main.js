@@ -7,6 +7,7 @@ import { authUser } from '../store/actions/auth';
 import { removeError } from '../store/actions/error';
 import withAuth from '../hocs/withAuth';
 import MovieForm from './MovieForm';
+import Moviepage from './Moviepage';
 const Main = (props) => {
   return (
     <div>
@@ -46,6 +47,7 @@ const Main = (props) => {
           }}
         />
         <Route path="/users/:id/movies/new" component={withAuth(MovieForm)} />
+        <Route exact path="/movies/:movie_id" component={Moviepage} />
       </Switch>
     </div>
   );
