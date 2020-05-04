@@ -1,6 +1,5 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import CarouseItem from '../component/CarouselItem';
 import CarouselItem from '../component/CarouselItem';
 
 const MovieCarousel = ({ movies }) => {
@@ -8,7 +7,9 @@ const MovieCarousel = ({ movies }) => {
 
   CarouselItems = movies.filter((m) => m.imageUrl);
   CarouselItems = CarouselItems.map((m, i) => {
-    return <CarouseItem imageUrl={m.imageUrl} active={i === 0} />;
+    return (
+      <CarouselItem imageUrl={m.imageUrl} movie_id={m._id} active={i === 0} />
+    );
   });
   console.log(CarouselItems);
   return (

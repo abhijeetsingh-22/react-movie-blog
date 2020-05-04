@@ -1,20 +1,12 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-const CarouseItem = ({ imageUrl, active }) => {
-  //   console.log(active);
-  //   let cl = 'd-block w-100 ';
-  //   active && (cl = cl + ' active');
+const CarouseItem = ({ imageUrl, active, movie_id }) => {
   return (
     <div className={`carousel-item ${active && 'active'}`}>
-      <a href="/">
+      <Link to={`/movies/${movie_id}`}>
         <img src={imageUrl} className="d-block w-100" alt="..." />
-        {/* <div className="carousel-caption d-none d-md-block">
-      <h5>First slide label</h5>
-      <p>
-        Nulla vitae elit libero, a pharetra augue mollis interdum.
-      </p>
-    </div> */}
-      </a>
+      </Link>
     </div>
   );
 };
