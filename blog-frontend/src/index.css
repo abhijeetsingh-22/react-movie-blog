@@ -37,6 +37,9 @@ code {
 
   object-fit: cover;
 }
+.movieHeading {
+  color: #da0662;
+}
 .footer {
   background-color: #5a289f;
   color: #d3d3d3;

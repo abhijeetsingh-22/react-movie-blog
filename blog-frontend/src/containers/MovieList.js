@@ -17,11 +17,7 @@ class MovieList extends Component {
         />
       );
     });
-    return (
-      <div className="container mt-5">
-        <div className="row ">{movieCards}</div>
-      </div>
-    );
+    return <div className="row ">{movieCards}</div>;
   }
 }
 

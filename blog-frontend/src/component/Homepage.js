@@ -6,7 +6,10 @@ const Homepage = () => {
   return (
     <>
       <MovieCarousel />
-      <MovieList />
+      <div className="container mt-5">
+        <h2 className="mb-3 movieHeading">Recent Movies</h2>
+        <MovieList />
+      </div>
     </>
   );
 };
