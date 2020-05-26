@@ -3,6 +3,9 @@ install: -cd ./blog-frontend
   -npm install
 script: -npm run build
 deploy:
-  skip_cleanup: true
+  provider: netlify
+  site: test
+  dir: ./build
+  cleanup: false
 notifications:
   slack: code-soul:onWWUFlZgoIoYyB2mPcMo66e
