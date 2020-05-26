@@ -1,0 +1,8 @@
+language: node_js
+install: -cd ./blog-frontend
+  -npm install
+script: -npm run build
+deploy:
+  skip_cleanup: true
+notifications:
+  slack: code-soul:onWWUFlZgoIoYyB2mPcMo66e
